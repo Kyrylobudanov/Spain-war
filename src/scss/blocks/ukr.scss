@@ -1,0 +1,35 @@
+.ukr {
+    @include adaptiveValue("padding-bottom", 50, 40);
+    
+    &__paragraph {
+        display: flex;
+        content: '';
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: justify;
+        text-indent: 1.27cm;
+        margin: 10px 80px;
+        color: $color-black-solid;
+    }
+
+    &__photo {
+        text-align: center;
+        margin: 30px 0;
+
+        img {
+            display: inline-block;
+            max-width: 70%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .ukr__subtitle {
+            font-size: 18px;
+            font-style: italic;
+            margin: 10px 80px;
+            color: $color-black-solid;
+        }
+    }
+}

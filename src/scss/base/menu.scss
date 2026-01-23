@@ -1,0 +1,151 @@
+.menu {
+
+	// .menu__icon
+	&__icon {}
+
+	// .menu__body
+	&__body {
+		@media (max-width: $tablet) {
+			position: fixed;
+			width: 100%;
+			height: 100%;
+			left: -100%;
+			top: 0;
+			overflow: auto;
+			padding: toRem(50) toRem(15) toRem(15) toRem(30);
+			transition: left 0.3s;
+			background-color: #333;
+			display: flex;
+			align-items: center;
+			justify-content: center;;
+
+			&::before {
+				content: "";
+				position: fixed;
+				width: 100%;
+				height: toRem(70);
+				left: -100%;
+				top: 0;
+				transition: left 0.3s;
+				z-index: 2;
+			}
+
+			.menu-open & {
+				left: 0;
+
+				&::before {
+					left: 0;
+				}
+			}
+		}
+	}
+
+	// .menu__list
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: toRem(15);
+		row-gap: 25px;
+		flex-wrap: wrap;
+		justify-content: end;
+
+		@media (max-width: $tablet) {
+			flex-direction: column;
+			row-gap: toRem(35);
+		}
+	}
+
+	// .menu__item
+	&__item {}
+
+	// .menu__link
+	&__link {
+		font-family: $font-family;
+		font-weight: 700;
+		font-size: 13px;
+		line-height: 1.5;
+		text-align: center;
+		color: #fff;
+		padding: 15px;
+		background-color: #000;
+		border-radius: 20px;
+		transition: background-color 0.3s linear;
+
+		&.active {
+			background-color: $color-red-36;
+		}
+
+		@media (max-width: $tablet) {
+			color: #fff;
+			font-size: 26px;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: $color-red-36;
+			}
+		}
+	}
+}
+
+//Burger Icon
+.icon-menu {
+	display: none;
+
+	@media (max-width: $tablet) {
+		display: block;
+		position: relative;
+		width: toRem(30);
+		height: toRem(18);
+		z-index: 5;
+
+		@media (any-hover: none) {
+			cursor: default;
+		}
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: toRem(2);
+			background-color: #000;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: calc(50% - toRem(1));
+		}
+
+		.menu-open & {
+			span {
+				width: 0;
+			}
+
+			&::before,
+			&::after {
+				background-color: #fff;
+			}
+
+			&::before {
+				top: calc(50% - toRem(1));
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				bottom: calc(50% - toRem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

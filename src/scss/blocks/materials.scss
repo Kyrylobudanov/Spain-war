@@ -1,0 +1,3 @@
+.mat {
+    @include adaptiveValue("padding-bottom", 50, 40);
+}

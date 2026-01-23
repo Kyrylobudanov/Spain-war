@@ -1,0 +1,23 @@
+.header {
+    padding: 15px 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    &.header--static {
+        position: static;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: toRem(15);
+
+        @media (max-width:$tablet) {
+            align-items: center;
+        }
+    }
+}

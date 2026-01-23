@@ -1,0 +1,40 @@
+.footer {
+    padding: 20px 0 50px;
+    background-color: #080938;
+}
+
+.footer-contacts {
+    &__title {
+        font-family: $third-family;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 125%;
+        color: $color-white-solid;
+
+        &::after {
+            content: '';
+            display: block;
+            height: 1px;
+            width: 45px;
+            background-color: #ac3d1d;
+            margin: 9px 0 30px;
+        }
+    }
+
+    &__list {
+        display: grid;
+        gap: 15px;
+    }
+
+    &__item {
+        font-family: $font-family;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 160%;
+        color: $color-grey-83;
+
+        & span {
+            color: $color-white-solid;
+        }
+    }
+}
