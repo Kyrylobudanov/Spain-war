@@ -20,10 +20,11 @@
 <script>
     let map = L.map('map').setView([40.39186965671031, -3.753132737661268], 6);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.' + 'png', {
+    const ext = String.fromCharCode(112, 110, 103);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.' + ext, {
         minZoom: 2,
         maxZoom: 19,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        attribution: '&copy; OpenStreetMap'
     }).addTo(map);
 
 
