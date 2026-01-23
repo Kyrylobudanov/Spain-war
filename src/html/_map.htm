@@ -10,7 +10,8 @@
         aspect-ratio: 16 / 10; 
         min-height: 550px; 
         max-height: 850px;
-        background-color: #f0f0f0;">
+        background-color: #f0f0f0;
+        z-index: 1;">
     </div>
 </div>
 
@@ -68,4 +69,8 @@
 
     L.marker([40.41689377173766, -3.703634033086894]).addTo(map)
         .bindPopup('<b>м. Мадрид</b>')
+
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 400);
 </script>
