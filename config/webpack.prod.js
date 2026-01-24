@@ -14,7 +14,7 @@ const rootFolder = path.basename(path.resolve());
 
 let cssImagesWebpLoader, htmlImagesWebpLoader;
 
-const assetRegex = '(?<!https?://.*)\\.(png|jpeg|jpg|svg)';
+const assetRegex = '(?<!https?://.*)\\.(png|jpeg|jpg)';
 
 cssImagesWebpLoader = {
 	loader: 'string-replace-loader',
