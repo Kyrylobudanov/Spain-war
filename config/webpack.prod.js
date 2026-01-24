@@ -14,17 +14,21 @@ const rootFolder = path.basename(path.resolve());
 
 let cssImagesWebpLoader, htmlImagesWebpLoader;
 
-// cssImagesWebpLoader = {
-// 	loader: 'string-replace-loader',
-// 	options: {
-// 		search: '.png|.jpeg|.jpg|.gif',
-// 		replace: '.webp',
-// 		flags: 'ig'
-// 	}
-// }
-// htmlImagesWebpLoader = {
-// 	regex: '.png|.jpeg|.jpg|.gif', to: '.webp'
-// }
+const assetRegex = '(?<!https?://.*)\\.(png|jpeg|jpg|svg)';
+
+cssImagesWebpLoader = {
+	loader: 'string-replace-loader',
+	options: {
+		search: assetRegex,
+		replace: '.webp',
+		flags: 'ig'
+	}
+};
+
+htmlImagesWebpLoader = {
+	regex: assetRegex,
+	to: '.webp'
+};
 
 let pugPages = fs.readdirSync(srcFolder).filter(fileName => fileName.endsWith('.pug'))
 let htmlPages = [];
@@ -40,6 +44,7 @@ if (!pugPages.length) {
 		replace: [
 			{ regex: '../img', to: 'img' },
 			{ regex: '@img', to: 'img' },
+			htmlImagesWebpLoader,
 			{ regex: 'NEW_PROJECT_NAME', to: rootFolder }
 		],
 	})]
@@ -77,7 +82,7 @@ const config = {
 							replace: '../img',
 							flags: 'ig'
 						}
-					},
+					}, cssImagesWebpLoader,
 					{
 						loader: 'css-loader',
 						options: {
