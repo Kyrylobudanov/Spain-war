@@ -22,7 +22,7 @@
     const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}{ext}';
     
     L.tileLayer(tileUrl, {
-        ext: '.p' + 'ng', // Webpack ніколи не знайде тут ".png"
+        ext: '.p' + 'ng',
         minZoom: 2,
         maxZoom: 19,
         attribution: '&copy; OpenStreetMap'
