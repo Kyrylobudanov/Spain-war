@@ -610,6 +610,10 @@ body {
   border-color: red;
   background: #ff7e67
 }
+.choice.missed {
+  border: 2px dashed green;
+  background: rgba(182,237,127,.2)
+}
 .index__paragraph {
   display: block;
   font-family: Georgia,"Times New Roman",Times,serif;
