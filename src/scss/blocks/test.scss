@@ -151,13 +151,13 @@
         }
 
         &.correct {
-            border-color: $color-blue-13;
-            background: $color-grey-96;
+            border-color: green;
+            background: rgb(182, 237, 127);
         }
-
+    
         &.incorrect {
-            border-color: $color-red-46;
-            background: $color-grey-93;
+            border-color: red;
+            background: rgb(255, 126, 103);
         }
     }
 }
@@ -229,10 +229,10 @@
 }
 
 .choice.correct {
-  border-color: $color-blue-13;
-  background: $color-grey-96;
+    border-color: green;
+    background: rgb(182, 237, 127);
 }
 .choice.incorrect {
-  border-color: $color-red-46;
-  background: $color-grey-93;
+    border-color: red;
+    background: rgb(255, 126, 103);
 }
