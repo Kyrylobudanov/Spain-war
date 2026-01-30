@@ -130,7 +130,7 @@
         correct: options.reduce((acc, o, i) => (o.isCorrect ? acc.concat(i) : acc), [])
       };
     });
-    
+
     const partC = pick(BANK_TEXT, c).map(it => ({ type: 'C', ...it }));
 
     currentQuiz = shuffle([...partA, ...partB, ...partC]);
@@ -197,12 +197,23 @@
         const inputs = $$(`input[name="q${qi}"]`);
         const selected = inputs.reduce((acc, i) => (i.checked ? acc.concat(+i.value) : acc), []);
         const correct = new Set(it.correct);
-        const ok = selected.length && selected.length === correct.size && selected.every(v => correct.has(v));
+
+        const ok = selected.length === correct.size && selected.every(v => correct.has(v));
+
         inputs.forEach((inp, i) => {
           const lbl = inp.parentElement;
-          if (correct.has(i)) lbl.classList.add('correct');
-          else if (inp.checked) lbl.classList.add('incorrect');
+          const isCorrectAnswer = correct.has(i);
+          const isSelected = inp.checked;
+
+          if (isSelected && isCorrectAnswer) {
+            lbl.classList.add('correct');
+          } else if (isSelected && !isCorrectAnswer) {
+            lbl.classList.add('incorrect');
+          } else if (!isSelected && isCorrectAnswer) {
+            lbl.classList.add('missed');
+          }
         });
+
         if (ok) score++;
       }
 
