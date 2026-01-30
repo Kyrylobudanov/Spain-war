@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20260124121005">
+	<link rel="stylesheet" href="css/style.min.css?_v=20260130181317">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -461,7 +461,7 @@
 						воювала рота імені Шевченка у Іспанії:
 					</p>
 
-					<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?_v=20260124121005" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+					<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css?_v=20260130181317" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
 					<div class="map__container" style="
     max-width: 1200px; 
@@ -477,14 +477,14 @@
 						</div>
 					</div>
 
-					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?_v=20260124121005"></script>
+					<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js?_v=20260130181317"></script>
 
 					<script>
 						let map = L.map('map').setView([40.39186965671031, -3.753132737661268], 6);
 						const tileUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}{ext}';
 
 						L.tileLayer(tileUrl, {
-							ext: '.p' + 'ng', // Webpack ніколи не знайде тут ".webp"
+							ext: '.p' + 'ng',
 							minZoom: 2,
 							maxZoom: 19,
 							attribution: '&copy; OpenStreetMap'
@@ -698,12 +698,12 @@
 								Лесик Кирило Вікторович
 							</li>
 							<li class="footer-contacts__item">
-								<span>Клас</span>
-								11-Г
+								<span>Навчальний заклад</span>
+								ДНЛІТ
 							</li>
 							<li class="footer-contacts__item">
-								<span>Місто</span>
-								Дніпро
+								<span>Клас</span>
+								11-Г
 							</li>
 							<li class="footer-contacts__item">
 								<span>Номер мобільного телефону</span>
@@ -719,7 +719,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20260124121005"></script>
+	<script src="js/app.min.js?_v=20260130181317"></script>
 </body>
 
 </html>

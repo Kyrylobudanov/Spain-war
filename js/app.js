@@ -3617,14 +3617,32 @@
             const countEl = document.getElementById("count");
             const n = countEl ? +countEl.value || 9 : 9;
             const [a, b, c] = split3(n);
-            const partA = pick(BANK_SINGLE, a).map((it => ({
-                type: "A",
-                ...it
-            })));
-            const partB = pick(BANK_MULTI, b).map((it => ({
-                type: "B",
-                ...it
-            })));
+            const partA = pick(BANK_SINGLE, a).map((it => {
+                const mixed = it.choices.map(((txt, i) => ({
+                    txt,
+                    isCorrect: i === it.answerIndex
+                })));
+                shuffle(mixed);
+                return {
+                    type: "A",
+                    q: it.q,
+                    choices: mixed.map((m => m.txt)),
+                    answerIndex: mixed.findIndex((m => m.isCorrect))
+                };
+            }));
+            const partB = pick(BANK_MULTI, b).map((it => {
+                let options = it.choices.map(((txt, i) => ({
+                    text: txt,
+                    isCorrect: it.correct.includes(i)
+                })));
+                shuffle(options);
+                return {
+                    type: "B",
+                    q: it.q,
+                    choices: options.map((o => o.text)),
+                    correct: options.reduce(((acc, o, i) => o.isCorrect ? acc.concat(i) : acc), [])
+                };
+            }));
             const partC = pick(BANK_TEXT, c).map((it => ({
                 type: "C",
                 ...it
