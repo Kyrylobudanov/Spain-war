@@ -339,6 +339,14 @@ body {
   padding: 0 20px 20px;
   background-color: rgba(172,60,29,.8)
 }
+.people__link img {
+  width: 100%;
+  max-width: 265px;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 10px
+}
 .people__name {
   font-family: "Open Sans",sans-serif;
   font-weight: 400;
@@ -629,7 +637,7 @@ body {
   font-size: 22px;
   line-height: 1.5;
   color: #000;
-  margin: 10px 20px 20px 40px;
+  margin: 10px 80px;
   list-style-type: disc
 }
 .index__list li {
@@ -691,11 +699,6 @@ body {
   }
   .index {
     padding-bottom: 3.125rem
-  }
-}
-@media (min-width:992px) {
-  .index__list {
-    margin: 10px 80px 20px 120px
   }
 }
 @media (max-width:20em) {
