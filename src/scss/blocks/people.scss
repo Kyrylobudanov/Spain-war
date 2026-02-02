@@ -40,6 +40,14 @@
         gap: toRem(20);
         padding: 0 20px 20px;
         background-color: #ac3c1dcc;
+
+        img {
+            width: 100%;
+            max-width: 265px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+        }
     }
 
     &__name {

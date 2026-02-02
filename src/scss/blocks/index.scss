@@ -17,14 +17,9 @@
         font-size: 22px;
         line-height: 1.5;
         color: $color-black-solid;
-        
-        margin: 10px 20px 20px 40px; 
-        @media (min-width: 992px) {
-            margin: 10px 80px 20px 120px;
-        }
-
+        margin: 10px 80px;
         list-style-type: disc;
-
+        
         li {
             margin-bottom: 10px;
             padding-left: 5px;
