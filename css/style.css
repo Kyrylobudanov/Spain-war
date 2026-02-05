@@ -344,8 +344,7 @@ body {
   max-width: 265px;
   height: auto;
   -o-object-fit: cover;
-  object-fit: cover;
-  border-radius: 10px
+  object-fit: cover
 }
 .people__name {
   font-family: "Open Sans",sans-serif;

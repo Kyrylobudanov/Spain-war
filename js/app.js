@@ -3443,7 +3443,7 @@
             choices: [ "З Галичини (Польща), Канади та Франції", "Тільки з території УРСР", "Виключно з таборів інтернованих у Німеччині" ],
             answerIndex: 0
         }, {
-            q: "Яку тактику часто застосовували інтербригади, зокрема рота Шевченка?",
+            q: "Яку тактику часто застосовували інтербригади, зокрема рота ім. Шевченка?",
             choices: [ "Контратаки та оборона укріплених районів", "Партизанська війна в тилу ворога", "Морські десанти на узбережжя" ],
             answerIndex: 0
         }, {
@@ -3661,7 +3661,7 @@
             quizRoot.innerHTML = html;
         }
         function checkAnswers() {
-            $$("label.correct, label.incorrect, input.text-answer.correct, input.text-answer.incorrect").forEach((el => el.classList.remove("correct", "incorrect")));
+            $$("label.correct, label.incorrect, label.missed, input.text-answer.correct, input.text-answer.incorrect").forEach((el => el.classList.remove("correct", "incorrect", "missed")));
             let score = 0;
             currentQuiz.forEach(((it, qi) => {
                 if (it.type === "A") {
@@ -3676,7 +3676,7 @@
                             picked.parentElement.classList.add("incorrect");
                             inputs[it.answerIndex]?.parentElement.classList.add("correct");
                         }
-                    } else inputs[it.answerIndex]?.parentElement.classList.add("correct");
+                    } else inputs[it.answerIndex]?.parentElement.classList.add("missed");
                 } else if (it.type === "B") {
                     const inputs = $$(`input[name="q${qi}"]`);
                     const selected = inputs.reduce(((acc, i) => i.checked ? acc.concat(+i.value) : acc), []);
