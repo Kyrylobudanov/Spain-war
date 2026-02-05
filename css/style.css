@@ -303,6 +303,14 @@ body {
   margin: 10px 80px;
   color: #000
 }
+.people__slide {
+  height: auto;
+  display: flex
+}
+.people__item {
+  width: 100%;
+  display: flex
+}
 .people__paragraph {
   display: flex;
   content: "";
@@ -335,24 +343,35 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
-  padding: 0 20px 20px;
-  background-color: rgba(172,60,29,.8)
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: rgba(172,60,29,.8);
+  transition: background-color .3s ease
+}
+.people__link:hover {
+  background-color: #ac3c1d
 }
 .people__link img {
   width: 100%;
   max-width: 265px;
-  height: auto;
+  aspect-ratio: 265/335;
   -o-object-fit: cover;
-  object-fit: cover
+  object-fit: cover;
+  margin-bottom: 20px;
+  flex-shrink: 0
 }
 .people__name {
   font-family: "Open Sans",sans-serif;
   font-weight: 400;
   font-size: 20px;
-  line-height: 126%;
+  line-height: 1.2;
   text-align: center;
-  color: #000
+  color: #000;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 .people__wrapper {
   margin-bottom: 40px
