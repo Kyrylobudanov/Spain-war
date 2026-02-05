@@ -25,7 +25,7 @@
     { q: "Де продовжили військову службу деякі українці-франкісти після 1941 року?", choices: ["У складі «Блакитної дивізії» на Східному фронті", "У Французькому іноземному легіоні", "В Українській Повстанській Армії"], answerIndex: 0 },
     { q: "Якою була чисельна пропорція українців у війні?", choices: ["Переважна більшість — за Республіку, меншість — за Франко", "Приблизно порівну з обох боків", "Більшість підтримала націоналістів"], answerIndex: 0 },
     { q: "Звідки прибували українські добровольці до роти ім. Шевченка?", choices: ["З Галичини (Польща), Канади та Франції", "Тільки з території УРСР", "Виключно з таборів інтернованих у Німеччині"], answerIndex: 0 },
-    { q: "Яку тактику часто застосовували інтербригади, зокрема рота Шевченка?", choices: ["Контратаки та оборона укріплених районів", "Партизанська війна в тилу ворога", "Морські десанти на узбережжя"], answerIndex: 0 },
+    { q: "Яку тактику часто застосовували інтербригади, зокрема рота ім. Шевченка?", choices: ["Контратаки та оборона укріплених районів", "Партизанська війна в тилу ворога", "Морські десанти на узбережжя"], answerIndex: 0 },
     { q: "Хто з відомих воєначальників був радником в Іспанії під псевдонімом «Колонель Малино»?", choices: ["Родіон Малиновський", "Семен Тимошенко", "Климент Ворошилов"], answerIndex: 0 }
   ];
 
@@ -170,8 +170,8 @@
   }
 
   function checkAnswers() {
-    $$('label.correct, label.incorrect, input.text-answer.correct, input.text-answer.incorrect')
-      .forEach(el => el.classList.remove('correct', 'incorrect'));
+    $$('label.correct, label.incorrect, label.missed, input.text-answer.correct, input.text-answer.incorrect')
+      .forEach(el => el.classList.remove('correct', 'incorrect', 'missed'));
 
     let score = 0;
 
@@ -189,7 +189,7 @@
             inputs[it.answerIndex]?.parentElement.classList.add('correct');
           }
         } else {
-          inputs[it.answerIndex]?.parentElement.classList.add('correct');
+          inputs[it.answerIndex]?.parentElement.classList.add('missed');
         }
       }
 
