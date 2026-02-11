@@ -640,37 +640,60 @@ body {
   border: 2px dashed green;
   background: rgba(182,237,127,.2)
 }
-.index__paragraph {
-  display: block;
+.index {
   font-family: Georgia,"Times New Roman",Times,serif;
-  font-size: 22px;
-  line-height: 1.5;
-  text-align: justify;
-  text-indent: 1.27cm;
-  margin: 10px 80px;
   color: #000
 }
-.index__list {
-  font-family: Georgia,"Times New Roman",Times,serif;
-  font-size: 22px;
-  line-height: 1.5;
-  color: #000;
-  margin: 10px 80px;
-  list-style-type: disc
-}
-.index__list li {
-  margin-bottom: 10px;
-  padding-left: 5px;
-  text-align: left
-}
-.subtitle {
-  display: block;
-  font-size: 25px;
-  font-style: italic;
-  font-family: Georgia,"Times New Roman",Times,serif;
-  margin: 30px auto 10px auto;
+.index__header {
   text-align: center;
-  color: #000
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 60px;
+  line-height: 1.3;
+  font-size: 18px
+}
+.index__work-type {
+  text-align: center;
+  margin-bottom: 50px
+}
+.index__label {
+  font-size: 32px;
+  text-transform: uppercase;
+  margin-bottom: 20px
+}
+.index__topic-label {
+  font-size: 20px;
+  margin-bottom: 15px
+}
+.index__main-title {
+  font-size: 28px;
+  font-weight: 700;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.4
+}
+.index__authorship {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-right: 10%;
+  font-size: 20px;
+  line-height: 1.6
+}
+.index__authorship .authorship__student {
+  margin-bottom: 30px;
+  text-align: left;
+  min-width: 250px
+}
+.index__authorship .authorship__mentors {
+  text-align: left;
+  min-width: 250px
+}
+.index__footer {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.5;
+  margin-top: 50px
 }
 .swiper {
   overflow: hidden
@@ -716,7 +739,16 @@ body {
     padding-bottom: 3.125rem
   }
   .index {
+    padding-top: 2.5rem
+  }
+  .index {
     padding-bottom: 3.125rem
+  }
+  .index__authorship {
+    margin-top: 5rem
+  }
+  .index__authorship {
+    margin-bottom: 5rem
   }
 }
 @media (max-width:20em) {
@@ -733,7 +765,16 @@ body {
     padding-bottom: 2.5rem
   }
   .index {
+    padding-top: 1.25rem
+  }
+  .index {
     padding-bottom: 2.5rem
+  }
+  .index__authorship {
+    margin-top: 2.5rem
+  }
+  .index__authorship {
+    margin-bottom: 2.5rem
   }
 }
 @media (max-width:61.99875em) {
@@ -828,6 +869,17 @@ body {
     cursor: default
   }
 }
+@media (max-width:29.99875em) {
+  .index__authorship {
+    align-items: center;
+    padding-right: 0;
+    text-align: center
+  }
+  .index__authorship .authorship__mentors,
+  .index__authorship .authorship__student {
+    text-align: center
+  }
+}
 @media (min-width:20em) and (max-width:109.375em) {
   .war {
     padding-bottom: clamp(2.5rem ,2.3601398601rem + .6993006993vw ,3.125rem)
@@ -842,7 +894,16 @@ body {
     padding-bottom: clamp(2.5rem ,2.3601398601rem + .6993006993vw ,3.125rem)
   }
   .index {
+    padding-top: clamp(1.25rem ,.9702797203rem + 1.3986013986vw ,2.5rem)
+  }
+  .index {
     padding-bottom: clamp(2.5rem ,2.3601398601rem + .6993006993vw ,3.125rem)
+  }
+  .index__authorship {
+    margin-top: clamp(2.5rem ,1.9405594406rem + 2.7972027972vw ,5rem)
+  }
+  .index__authorship {
+    margin-bottom: clamp(2.5rem ,1.9405594406rem + 2.7972027972vw ,5rem)
   }
 }
 @media (any-hover:hover) {
